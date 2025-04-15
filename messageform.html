@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправка почты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Oswald:wght@200..700&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap');
+    </style>
+</head>
+<body>
+    <audio id="sound" src="https://zvukitop.com/wp-content/uploads/2021/09/zvuk-soobsheniya-vk-1.mp3"></audio>
+    <h2>Отправка почты через поле ввода</h2>
+    <h4>Отправить сообщение, нажав на кнопку "Send Email"</h4>
+    <form id="emailForm">
+        <input  style=' caret-color: chocolate; font-family: "Oswald", serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;' type="text" id="message" name="message" placeholder="Введите текст: " required />
+        <input  style=' caret-color: rgb(210, 30, 30); font-family: "Oswald", serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;' type="text" id="email" name="message" placeholder="Введите почту" required />
+        <button id="btn" type="submit" onclick="sendMail()">Send Email</button>
+    </form>
+    <script>
+        var x = document.getElementById("sound");
+    function sendMail() {
+        x.play();
+        if (document.getElementById('message').value == '') {
+            return;
+        }
+         if (document.getElementById('email').value == '') {
+            return;
+        }
+var message = document.getElementById('message').value;
+var email = document.getElementById('email').value;
+x.play();
+window.location.href = `mailto:${email}&body= ${message}`;
+}
+
+    </script>
+    <div id="footer" >MADE BY <a style="text-decoration: none;" href="https://t.me/takemyhtml" >@TAKEMYHTML</a></div>
+<style>
+    #emailForm{
+        margin-left: 250px;
+        
+    }
+    #btn{
+        border-radius: 8px;
+        background: linear-gradient(whitesmoke, rgb(199, 199, 199));
+        filter: drop-shadow(7px 3px 5px black);
+        border: 2px solid black;
+        height: 35px;
+        transition: 0.65s ease;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+    #btn:active{
+        background: linear-gradient(360deg, rgb(255, 166, 0) , rgb(251, 243, 0));
+        filter: drop-shadow(4px 2px 3px black);
+    }
+    #message:focus{
+        z-index: 1;
+        background-color: transparent;
+        animation: q 2800ms ease-in-out 0s alternate-reverse;
+    }
+    #message:required{
+        background: linear-gradient(90deg, rgb(255, 166, 0) , rgb(251, 243, 0));
+        border: 2.5px solid black;
+        border-radius: 5px;
+        outline: none;
+    }
+    #email:required{
+        background: linear-gradient(90deg, rgb(0, 255, 64) , rgb(77, 159, 77));
+        border: 2.5px solid black;
+        border-radius: 5px;
+        outline: none;
+    }
+    #email:focus{
+        z-index: 1;
+        background-color: transparent;
+        animation: q 2800ms ease-in-out 0s alternate-reverse;
+    }
+        body{
+        background: linear-gradient(gray, whitesmoke);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+    }
+    h2 {
+        margin-left: 210px ;
+        font-family: "Rubik Mono One", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    h4{
+        margin-left: 210px ;
+        -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: 0.2px;
+        font-family: "Rubik Mono One", serif;
+        font-weight: 400;
+        font-style: normal;
+
+    }
+    #footer{
+        background: linear-gradient(gray, lightgray);
+        opacity: 45%;
+        text-align: center;
+        border-radius: 5px;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        height: 45px ;
+    }
+    a{
+        opacity: 100%;
+        font-weight:bolder;
+        color: black;
+        -webkit-text-stroke-color: black;
+    }
+    @keyframes q {
+ from {background-position: 0px 0px;}
+to {background-position:  500px 0px;}
+    }
+</style>
+</body>
+</html>
