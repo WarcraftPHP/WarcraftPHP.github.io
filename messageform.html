@@ -21,6 +21,7 @@
         <input  style=' caret-color: rgb(210, 30, 30); font-family: "Oswald", serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;' type="text" id="email" name="message" placeholder="Введите почту" required />
         <button id="btn" type="submit" onclick="sendMail()">Send Email</button>
     </form>
+    <a href="https://warcraftphp.github.io/messageform.html" class="MessageForm">MessageForm</a>
     <script>
         var x = document.getElementById("sound");
     function sendMail() {
@@ -102,7 +103,20 @@ window.location.href = `mailto:${email}&body= ${message}`;
         font-family: "Rubik Mono One", serif;
         font-weight: 400;
         font-style: normal;
-
+    
+    }
+    .MessageForm{
+        border-radius: 25px;
+        background: linear-gradient(180deg,rgb(200, 242, 225), rgb(119, 159, 245), #67b760);
+        background-clip: text;
+        color: transparent;
+        -webkit-text-stroke-color: rgb(47, 78, 255);
+        -webkit-text-stroke-width: 0.19px;
+        text-shadow: #000 3px 5px 5px;
+        text-decoration: none;
+    }
+    .MessageForm{
+        animation: hover 4s infinite;
     }
     #footer{
         background: linear-gradient(gray, lightgray);
@@ -126,6 +140,10 @@ window.location.href = `mailto:${email}&body= ${message}`;
     @keyframes q {
  from {background-position: 0px 0px;}
 to {background-position:  500px 0px;}
+    }
+    @keyframes hover{
+from {background-position-y: 500px ;}
+to {background-position-y: 50000px;}
     }
 </style>
 </body>
