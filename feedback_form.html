@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback form</title>
+</head>
+<body>
+    <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+    <h4>Lorem ipsum dolor sit amet.</h4>
+    <form id="emailForm">
+        <label for="message">Your Message:</label>
+        <input type="text" id="message" name="message" required />
+        <button type="submit" onclick="sendMail()">Send Email</button>
+    </form>
+    <script>
+    function sendMail() {
+        if (document.getElementById('message').value == "") {
+            return;
+        }
+var message = document.getElementById('message').value;
+window.location.href = `mailto:(YOUR_EMAIL)?subject=Report%20Bug/Offer%20ideas&body=Feedback: ${message}`;
+ }
+    </script>
+</body>
+</html>
