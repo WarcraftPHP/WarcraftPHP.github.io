@@ -21,7 +21,7 @@
         <input  style=' caret-color: rgb(210, 30, 30); font-family: "Oswald", serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;' type="text" id="email" name="message" placeholder="Введите почту" required />
         <button id="btn" type="submit" onclick="sendMail()">Send Email</button>
     </form>
-    <a href="https://warcraftphp.github.io/messageform.html" class="MessageForm">MessageForm</a>
+    <a href="https://warcraftphp.github.io" class="olxtables">OLX</a>
     <script>
         var x = document.getElementById("sound");
     function sendMail() {
@@ -105,7 +105,7 @@ window.location.href = `mailto:${email}&body= ${message}`;
         font-style: normal;
     
     }
-    .MessageForm{
+    .olxtable{
         border-radius: 25px;
         background: linear-gradient(180deg,rgb(200, 242, 225), rgb(119, 159, 245), #67b760);
         background-clip: text;
@@ -115,7 +115,7 @@ window.location.href = `mailto:${email}&body= ${message}`;
         text-shadow: #000 3px 5px 5px;
         text-decoration: none;
     }
-    .MessageForm{
+    .olxtable:hover{
         animation: hover 4s infinite;
     }
     #footer{
