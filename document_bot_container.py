@@ -14,5 +14,5 @@ def handle_photo(message):
     with open(file_path, 'wb') as f:
         f.write(downloaded_file)
         print(f"'{grouptitle}' from @{username} has been saved")
-        print(f"FileSize: {len(downloaded_file)/(1024**2):.2f} bytes")
+        print(f"FileSize: {len(downloaded_file)/(1024**2):.2f} megabytes")
 bot.polling()
