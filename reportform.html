@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жалоба на нарушение</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://servermon.ru/cdn/attachment/2023/11/4092/_2.jpeg') no-repeat center center/cover;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 42px;
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #c82333;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #a71d2a;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Жалоба на канал @kfgart</h1>
+    <div class="content">
+        <button onclick="sendEmail()">Отправить жалобу</button>
+    </div>
+
+    <script>
+        function sendEmail() {
+            const email = encodeURIComponent("rsoc_in@rkn.gov.ru");
+            const subject = encodeURIComponent("Жалоба на канал и распространение вредоносного ПО, доксинг и угрозы");
+            const body = encodeURIComponent(
+`Здравствуйте. Сообщаю о нарушениях со стороны пользователя Telegram @imperiym, владельца канала @kfgart.
+
+1. В канале распространяется инструмент под названием "звезда смерти", который используется для организации массовых жалоб и блокировки чужих каналов. Это фактически вредоносный код, нарушающий работу информационных систем (ст. 272 и 273 УК РФ).
+2. Администрация канала занимается доксингом (сбор и распространение персональных данных анти-фурри и анти-квадробер активистов). Важно: доксы и угрозы отправляются жертвам напрямую в личные сообщения, чтобы скрыть факты нарушения от сторонних наблюдателей. Это подпадает под ст. 137 УК РФ и ст. 119 УК РФ (угрозы).
+3. В публичных сообщениях администрация изображает "человечность и аргументы", но на деле практикует массовые жалобы, травлю и скрытый доксинг. 
+4. Доступ в закрытую группу осуществляется только по заявке и одобрению администраторов, что подтверждает намеренное укрытие противоправных действий от проверяющих органов.
+5. Распростроняет ЛГБТ контент, в котором есть фурри, известные как  "boykissers", что пропагандирует ЛГБТ
+
+Ссылки:
+Звезда Смерти: https://kfgart.github.io/star.github.io
+
+Канал-переходник: t.me/kfgart
+
+Профиль: t.me/imperiym
+Прошу: 
+- Провести проверку деятельности канала @kfgart и его владельца @imperiym. 
+ 
+- Пресечь ЛГБТ пропаганду в чате и на профиле KFgart
+
+- Пресечь распространение вредоносного кода "звезда смерти". 
+ 
+- Проверить факты доксинга и угроз, направляемых в личные сообщения жертвам. 
+ 
+- Принять меры для привлечения виновных к ответственности. `
+            );
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
